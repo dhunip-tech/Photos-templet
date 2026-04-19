@@ -1,0 +1,97 @@
+body {
+    background: #ffeaa7;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    transition: background 1s ease;
+    overflow-x: hidden;
+}
+
+.container { 
+    text-align: center; 
+    width: 100%; 
+    max-width: 900px; 
+    padding: 20px;
+}
+
+/* Strict hiding for sections */
+.hidden-section {
+    display: none !important;
+    opacity: 0;
+}
+
+/* Gift Animation */
+.gift-box {
+    width: 120px; height: 120px;
+    margin: 50px auto;
+    position: relative; cursor: pointer;
+}
+.box { width: 100%; height: 100%; background: #ff7675; border-radius: 8px; position: relative; z-index: 1; }
+.lid { 
+    width: 130px; height: 30px; background: #d63031; 
+    position: absolute; top: -15px; left: -5px; border-radius: 4px;
+    transition: all 0.6s ease-in-out; z-index: 2;
+}
+
+/* Typewriter Cursor */
+#typewriterText {
+    font-size: 2.2rem;
+    color: white;
+    min-height: 1.2em;
+    border-right: 3px solid white;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink { 50% { border-color: transparent; } }
+
+.fade-in-text {
+    color: white;
+    font-size: 1.3rem;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+.show-text { opacity: 1; }
+
+/* The 18 Photo Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns x 6 rows */
+    gap: 12px;
+    margin-top: 30px;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.photo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 4px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Buttons */
+.btn-next, .btn-reset {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: white;
+    color: #d63031;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Large Screens - 6 Columns */
+@media (min-width: 900px) {
+    .photo-grid { grid-template-columns: repeat(6, 1fr); }
+}

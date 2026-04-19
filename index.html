@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="setup-area">
+            <h1 id="instruction">Tap the gift for a surprise! 🎁</h1>
+            <div class="gift-box" onclick="startSequence()">
+                <div class="lid"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+
+        <div id="messageScreen" class="hidden-section">
+            <h2 id="typewriterText"></h2>
+            <p class="fade-in-text">Buddy, I just wanted to collect a few moments of your memories in one place.</p>
+            <button id="galleryBtn" onclick="showGallery()" class="btn-next" style="display:none;">See the Memories ✨</button>
+        </div>
+
+        <div id="galleryWrapper" class="hidden-section">
+            <h2>Happiest Birthday! <br>Buddy✨</h2>
+            <div class="photo-grid">
+                <img src="pic1.jpeg" class="photo"> <img src="pic2.jpeg" class="photo">
+                <img src="pic3.jpeg" class="photo"> <img src="pic4.jpeg" class="photo">
+                <img src="pic5.jpeg" class="photo"> <img src="pic6.jpeg" class="photo">
+                <img src="pic7.jpeg" class="photo"> <img src="pic8.jpeg" class="photo">
+                <img src="pic9.jpeg" class="photo"> <img src="pic10.jpeg" class="photo">
+                <img src="pic11.jpeg" class="photo"> <img src="pic12.jpeg" class="photo">
+                <img src="pic13.jpeg" class="photo"> <img src="pic14.jpeg" class="photo">
+                <img src="pic15.jpeg" class="photo"> <img src="pic16.jpeg" class="photo">
+                <img src="pic17.jpeg" class="photo"> <img src="pic18.jpeg" class="photo">
+            </div>
+            <button onclick="location.reload()" class="btn-reset">Open Again 🔄</button>
+        </div>
+    </div>
+
+    <audio id="birthdaySong" src="birthday-song.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
